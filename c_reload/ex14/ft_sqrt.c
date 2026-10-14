@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/15 18:16:03 by amaghari          #+#    #+#             */
-/*   Updated: 2026/08/17 14:48:58 by amaghari         ###   ########.fr       */
+/*   Created: 2026/08/18 13:45:32 by amaghari          #+#    #+#             */
+/*   Updated: 2026/08/18 13:46:25 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-
-void	ft_putstr(char *str)
+int	ft_sqrt(int nb)
 {
 	int	i;
 
-	i = 0;
-	while (str[i] != '\0')
+	if (nb <= 0)
+		return (0);
+	i = 1;
+	while (i * i <= nb)
 	{
-		write(1, &str[i], 1);
+		if (i * i == nb)
+			return (i);
 		i++;
 	}
+	return (0);
 }
 /*
-int main(){
-	ft_putnbr(42);           // 42
-	ft_putnbr(-42);          // -42
-	ft_putnbr(0);            // 0
-	ft_putnbr(2147483647);   // INT_MAX
-	ft_putnbr(-2147483648);  // INT_MIN
-	return 0;
+#include <stdio.h>
+int main (){
+    printf("%d\n", ft_sqrt(21));
+    printf("%d\n", ft_sqrt(25));
+    return 0;
 }
 */

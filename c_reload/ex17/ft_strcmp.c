@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/15 16:47:48 by amaghari          #+#    #+#             */
-/*   Updated: 2026/08/15 16:49:03 by amaghari         ###   ########.fr       */
+/*   Created: 2026/08/10 14:44:52 by amaghari          #+#    #+#             */
+/*   Updated: 2026/08/15 12:08:34 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int argc, char *argv[])
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
-	int	j;
 
-	j = 1;
-	while (j < argc)
+	i = 0;
+	while (s1[i] != '\0' || s2[i] != '\0')
 	{
-		i = 0;
-		while (argv[j][i] != '\0')
+		if (s1[i] != s2[i])
 		{
-			write (1, &argv[j][i], 1);
-			i++;
+			return (s1[i] - s2[i]);
 		}
-		write (1, "\n", 1);
-		j++;
+		i++;
 	}
 	return (0);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("strcmp:\n");
+	printf("%d\n", ft_strcmp("abc", "abc"));
+	printf("%d\n", ft_strcmp("abc", "abd"));
+	printf("%d\n", ft_strcmp("abd", "abc"));
+	printf("%d\n", ft_strcmp("", ""));
+	printf("%d\n", ft_strcmp("abc", ""));
+	return (0);
+}
+*/

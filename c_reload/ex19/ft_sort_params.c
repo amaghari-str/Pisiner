@@ -1,58 +1,72 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/16 14:23:28 by amaghari          #+#    #+#             */
-/*   Updated: 2026/08/20 14:22:54 by amaghari         ###   ########.fr       */
+/*   Created: 2026/08/18 13:57:50 by amaghari          #+#    #+#             */
+/*   Updated: 2026/08/18 15:26:26 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <stddef.h>
 
-char	*ft_strcpy(char *dest, char *src)
+#include <unistd.h>
+
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (s1[i] != '\0' || s2[i] != '\0')
 	{
-		dest[i] = src[i];
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (0);
 }
 
-size_t	ft_strlen(char *str)
-	{
-	size_t	count;
-
-	count = 0;
-	while (str[count] != '\0')
-	{
-		count++;
-	}
-	return (count);
-}
-
-char	*ft_strdup(char *src)
+void	finde(int argc, char *str[])
 {
-	char	*p;
+	int		i;
+	int		j;
+	char	*arr;
 
-	p = malloc(sizeof(char) * (ft_strlen(src) + 1));
-	if (p == NULL)
-		return (NULL);
-	ft_strcpy(p, src);
-	return (p);
+	i = 1;
+	while (i < argc - 1)
+	{
+		j = 1;
+		while (j < argc - 1)
+		{
+			if (ft_strcmp(str[j], str[j + 1]) > 0)
+			{
+				arr = str[j];
+				str[j] = str[j + 1];
+				str[j + 1] = arr;
+			}
+			j++;
+		}
+		i++;
+	}
 }
-/*
-#include <stdio.h>
-int main(){
-	char arr[] = "is copy";
-	printf("%s\n", ft_strdup(arr));
-	return 0;
+
+int	main(int argc, char *argv[])
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	finde(argc, argv);
+	while (argc > i)
+	{
+		j = 0;
+		while (argv[i][j] != '\0')
+		{
+			write(1, &argv[i][j], 1);
+			j++;
+		}
+		write(1, "\n", 1);
+		i++;
+	}
+	return (0);
 }
-*/

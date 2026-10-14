@@ -1,72 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/18 13:57:50 by amaghari          #+#    #+#             */
-/*   Updated: 2026/08/18 15:26:26 by amaghari         ###   ########.fr       */
+/*   Created: 2026/08/15 16:47:48 by amaghari          #+#    #+#             */
+/*   Updated: 2026/08/15 16:49:03 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
-
-	i = 0;
-	while (s1[i] != '\0' || s2[i] != '\0')
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
-	}
-	return (0);
-}
-
-void	finde(int argc, char *str[])
-{
-	int		i;
-	int		j;
-	char	*arr;
-
-	i = 1;
-	while (i < argc - 1)
-	{
-		j = 1;
-		while (j < argc - 1)
-		{
-			if (ft_strcmp(str[j], str[j + 1]) > 0)
-			{
-				arr = str[j];
-				str[j] = str[j + 1];
-				str[j + 1] = arr;
-			}
-			j++;
-		}
-		i++;
-	}
-}
 
 int	main(int argc, char *argv[])
 {
 	int	i;
 	int	j;
 
-	i = 1;
-	finde(argc, argv);
-	while (argc > i)
+	j = 1;
+	while (j < argc)
 	{
-		j = 0;
-		while (argv[i][j] != '\0')
+		i = 0;
+		while (argv[j][i] != '\0')
 		{
-			write(1, &argv[i][j], 1);
-			j++;
+			write (1, &argv[j][i], 1);
+			i++;
 		}
-		write(1, "\n", 1);
-		i++;
+		write (1, "\n", 1);
+		j++;
 	}
 	return (0);
 }
