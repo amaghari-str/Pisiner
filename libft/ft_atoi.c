@@ -6,7 +6,7 @@
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/15 18:16:33 by amaghari          #+#    #+#             */
-/*   Updated: 2026/08/17 17:03:03 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/15 13:54:05 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@ int	ft_atoi(char *str)
 	{
 		str++;
 	}
-	while (*str == '+' || *str == '-')
+	if (*str == '+' || *str == '-')
 	{
 		if (*str++ == '-')
 			sign = -sign;
 	}
 	while (*str >= '0' && *str <= '9')
 	{
-		result = result * 10 + (*str++ - '0');
+		result = result * 10 + (*str - '0');
+		str++;
 	}
 	return (result * sign);
 }
