@@ -6,13 +6,14 @@
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/16 14:23:28 by amaghari          #+#    #+#             */
-/*   Updated: 2026/08/20 14:22:54 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/19 17:09:02 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
 #include <stddef.h>
+#include "ft_strlen.c"
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dest, const char *src)
 {
 	int	i;
 
@@ -26,19 +27,7 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-size_t	ft_strlen(char *str)
-	{
-	size_t	count;
-
-	count = 0;
-	while (str[count] != '\0')
-	{
-		count++;
-	}
-	return (count);
-}
-
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	char	*p;
 

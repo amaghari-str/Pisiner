@@ -6,13 +6,13 @@
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 17:25:38 by amaghari          #+#    #+#             */
-/*   Updated: 2026/08/06 17:25:42 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/19 17:09:39 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 	{
 	int	count;
 
