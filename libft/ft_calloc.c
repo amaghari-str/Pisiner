@@ -10,7 +10,7 @@ void *ft_calloc(size_t n, size_t l)
 	while (res > 0)
 	{
 		res--;
-		p[res] = (unsigned char) '\n';
+		p[res] = (unsigned char) '\0';
 	}
 	return ((void *)p);
 }
