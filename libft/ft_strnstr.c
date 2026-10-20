@@ -6,7 +6,7 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 19:44:12 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/20 19:45:46 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/20 20:11:11 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 	while (str[i] && i < n)
 	{
 		j = 0;
-		while (str[i + j] && to_find[j] && str[i + j] == to_find[j] && (i + j) < n)
+		while (str[i + j] && to_find[j]
+			&& str[i + j] == to_find[j] && (i + j) < n)
 			j++;
 		if (to_find[j] == '\0')
 			return ((char *)&str[i]);
@@ -38,11 +39,13 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 // Declaration of your function (replace with #include "libft.h" if applicable)
 char *ft_strnstr(const char *big, const char *little, size_t len);
 
-void run_test(int test_num, const char *big, const char *little, size_t len, const char *expected) {
+void run_test(int test_num, const char *big,
+ const char *little, size_t len, const char *expected) {
     char *result = ft_strnstr(big, little, len);
 
     printf("Test %d: ", test_num);
-    if (result == expected || (result && expected && strcmp(result, expected) == 0)) {
+    if (result == expected || (result
+	 && expected && strcmp(result, expected) == 0)) {
         printf("✅ PASSED");
     } else {
         printf("❌ FAILED");
@@ -62,7 +65,8 @@ int main(void) {
     // Test 1: Standard search in the middle with sufficient len
     run_test(1, haystack, "ipsum", 20, "ipsum dolor sit amet");
 
-    // Test 2: Substring exists, but len is too small to reach/match it (should return NULL)
+    // Test 2: Substring exists, but len is too small
+    // to reach/match it (should return NULL)
     run_test(2, haystack, "ipsum", 8, NULL);
 
     // Test 3: Substring matches exactly at boundary length len

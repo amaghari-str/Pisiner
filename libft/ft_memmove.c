@@ -6,7 +6,7 @@
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 16:05:20 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/20 19:19:21 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/20 20:16:44 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t value)
 {
-	size_t			i;
+	size_t				i;
 	unsigned char		*p;
-	const unsigned char		*s;
+	const unsigned char	*s;
 
 	p = (unsigned char *)dest;
 	s = (const unsigned char *)src;

@@ -6,7 +6,7 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 19:49:12 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/20 19:59:01 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/20 20:14:54 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	i;
-	char			*p;
+	int		i;
+	char	*p;
 	char	*buff;
 
 	i = 0;
