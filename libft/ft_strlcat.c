@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	a;
-	unsigned int	b;
-	unsigned int	i;
+	size_t	a;
+	size_t	b;
+	size_t	i;
 
 	a = 0;
 	b = 0;
@@ -37,8 +37,8 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 }
 /*
 #include <stdio.h>
- 
- int main(){	
+
+ int main(){
  	char str[] = "text test";
 	char arr[30] = "from ferst";
 	printf("%u\n", ft_strlcat(arr, str, 30));
