@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 static char	tlower(unsigned int i, char s)
 {
 	(void) i;
@@ -19,7 +19,7 @@ static char	tlower(unsigned int i, char s)
 		return (s + 32);
 	return (s);
 }
-
+*/
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*str;
