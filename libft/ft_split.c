@@ -6,12 +6,11 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 13:22:45 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/16 14:42:50 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/20 19:39:41 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_strlcpy.c"
+#include "libft.h"
 
 static size_t	ft_count_words(const char *s, char c)
 {
@@ -31,7 +30,6 @@ static size_t	ft_count_words(const char *s, char c)
 	}
 	return (words);
 }
-
 
 static size_t	len_word(const char *s, char c)
 {
@@ -56,31 +54,31 @@ static char	*spliting(const char *s, char c)
 	return (temp);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	size_t words;
-	char **p;
-	int i;
-	size_t j;
+	size_t	words;
+	char	**p;
+	int		i;
+	size_t	j;
 
 	if (!s || !c)
-		return NULL;
+		return (NULL);
 	words = ft_count_words(s, c);
 	p = (char **)malloc(sizeof(char *) * words + 1);
 	i = 0;
 	j = 0;
 	while (j < words)
 	{
-	    while (s[i] == c)
+		while (s[i] == c)
 			i++;
 		p[j] = spliting(s + i, c);
-		i += len_word(s + i, c); //skip this word
+		i += len_word(s + i, c);
 		j++;
 	}
 	p[j] = NULL;
 	return (p);
 }
-
+/*
 #include <stdio.h>
 
 static void	print_split(const char *s, char c)
@@ -121,3 +119,4 @@ int	main(void)
 	print_split(NULL, ' ');
 	return (0);
 }
+*/

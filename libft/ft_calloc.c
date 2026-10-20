@@ -1,10 +1,22 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/20 18:28:42 by amaghari          #+#    #+#             */
+/*   Updated: 2026/10/20 18:35:04 by amaghari         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void *ft_calloc(size_t n, size_t l)
+#include "libft.h"
+
+void	*ft_calloc(size_t n, size_t l)
 {
-	size_t	res;
-	unsigned char		*p;
-	
+	unsigned char	*p;
+	size_t			res;
+
 	res = n * l;
 	p = malloc(res);
 	while (res > 0)

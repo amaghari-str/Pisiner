@@ -6,17 +6,16 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 14:57:42 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/19 15:50:21 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/20 18:48:09 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_calloc.c"
-#include "ft_strlcpy.c"
+#include "libft.h"
 
-static  long long find_dev(int n)
+static long long	find_dev(int n)
 {
-	long temp;
-	long long dev;
+	long long	dev;
+	long		temp;
 
 	temp = n;
 	dev = 1;
@@ -28,9 +27,8 @@ static  long long find_dev(int n)
 	return (dev);
 }
 
-static short int_max(int n, char *p)
+static short	int_max(int n, char *p)
 {
-	
 	if (n == -2147483648)
 	{
 		ft_strlcpy(p, "-2147483648", 12);
@@ -39,7 +37,7 @@ static short int_max(int n, char *p)
 	return (0);
 }
 
-static short is_zero(int n, char *p)
+static short	is_zero(int n, char *p)
 {
 	if (n == 0)
 	{
@@ -49,29 +47,31 @@ static short is_zero(int n, char *p)
 	return (0);
 }
 
-char *ft_itoa(int n){
-	char *p;
-	short i;
-	long long dev;
+char	*ft_itoa(int n)
+{
+	long long	dev;
+	char		*p;
+	short		i;
 
 	i = 0;
 	p = ft_calloc(2, 20);
 	if (int_max(n, p) || is_zero(n, p))
-		return p;
+		return (p);
 	if (n < 0)
 	{
 		p[i++] = '-';
 		n = -n;
 	}
 	dev = find_dev(n);
-	while (dev > 0){
+	while (dev > 0)
+	{
 		p[i++] = (n / dev) + '0';
 		n %= dev;
 		dev /= 10;
 	}
 	return (p);
 }
-
+/*
 #include <stdio.h>
 
 int main (void){
@@ -82,3 +82,4 @@ int main (void){
 	printf("%s\n", ft_itoa(-2147483647));
 	return 0;
 }
+*/

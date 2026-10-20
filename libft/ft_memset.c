@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memcpy.c                                           :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/14 18:05:15 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/14 18:25:21 by amaghari         ###   ########.fr       */
+/*   Created: 2026/10/14 16:05:55 by amaghari          #+#    #+#             */
+/*   Updated: 2026/10/20 19:21:55 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-void *memcpy(void *dest, void *src, size_t n)
+void	*memset(void *b, int a, size_t n)
 {
-	unsigned char *p;
-	unsigned char *v;
-	int i;
+	unsigned char		*p;
+	int					i;
 
 	i = 0;
-	p = (unsigned char *)dest;
-	v = (unsigned char *)src;
+	p = (unsigned char *)b;
 	while (i < n)
 	{
-		p[i] = v[i];
+		p[i] = (unsigned char)a;
 		i++;
 	}
-	return (dest);
+	return (b);
 }
 /*
 #include <stdio.h>
-
-int main(void){
-	char dest[] = "test text";
-	char src[] = "main text";
-	char *p = memcpy(dest, src, 5);
-	printf("%s\n", p);
+int main (void){
+	char arr[] = "some text .txt";
+	char *p = (char *)memset(arr, 'a', 4);
+	printf("%s \n", p);
 	return 0;
 }
 */

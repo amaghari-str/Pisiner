@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/14 16:05:55 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/14 16:30:08 by amaghari         ###   ########.fr       */
+/*   Created: 2026/10/14 18:31:19 by amaghari          #+#    #+#             */
+/*   Updated: 2026/10/20 19:07:25 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-void *memset (void *b, int a, size_t n)
+void	*ft_memchr(const void *src, int c, size_t n)
 {
-	unsigned char *p;
-	int 	i;
+	const unsigned char	*str;
+	size_t				i;
 
 	i = 0;
-	p = (unsigned char *)b;
+	str = (unsigned char *)src;
 	while (i < n)
 	{
-		p[i] = (unsigned char)a;
+		if (str[i] == (unsigned char)c)
+			return ((void *)&str[i]);
 		i++;
 	}
-	return (b);
+	return (NULL);
 }
 /*
 #include <stdio.h>
 int main (void){
-	char arr[] = "some text .txt";
-	char *p = (char *)memset(arr, 'a', 4);
-	printf("%s \n", p);
+	char arr[] = "hello world";
+	char *p =(char *)ft_memchr(arr, 119, 12);
+	printf("%s\n", p);
 	return 0;
 }
 */

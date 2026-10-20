@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/09 18:38:48 by amaghari          #+#    #+#             */
-/*   Updated: 2026/08/15 14:21:17 by amaghari         ###   ########.fr       */
+/*   Created: 2026/10/14 18:05:15 by amaghari          #+#    #+#             */
+/*   Updated: 2026/10/20 19:11:08 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
+#include "libft.h"
+
+void	*memcpy(void *dest, void *src, size_t n)
 {
-	unsigned int	i;
-	unsigned int	src_len;
+	unsigned char	*p;
+	unsigned char	*v;
+	int				i;
 
 	i = 0;
-	src_len = 0;
-	while (src[src_len])
-		src_len++;
-	if (size == 0)
-		return (src_len);
-	while (src[i] && i < size - 1)
+	p = (unsigned char *)dest;
+	v = (unsigned char *)src;
+	while (i < n)
 	{
-		dest[i] = src[i];
+		p[i] = v[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (src_len);
+	return (dest);
 }
 /*
 #include <stdio.h>
-int main()
-{
-	char str[] = "example text";
-	char arr[20] = "";
-	printf("%d\n", ft_strlcpy(arr, str, 5));
-	printf("%s\n", arr);
-	return (0);
+
+int main(void){
+	char dest[] = "test text";
+	char src[] = "main text";
+	char *p = memcpy(dest, src, 5);
+	printf("%s\n", p);
+	return 0;
 }
 */

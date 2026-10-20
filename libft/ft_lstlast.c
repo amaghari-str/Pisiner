@@ -1,22 +1,29 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/20 18:53:17 by amaghari          #+#    #+#             */
+/*   Updated: 2026/10/20 18:56:45 by amaghari         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-typedef struct s_list
-{
-	int				value;
-	struct s_list	*next;
-}	t_list;
+#include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-    int i = 0;
-    if (!lst)
-        return (NULL);
-    while (lst[i].next)
-        i++;
-    return &lst[i];
+	int	i;
+
+	i = 0;
+	if (!lst)
+		return (NULL);
+	while (lst[i].next)
+		i++;
+	return (&lst[i]);
 }
-
+/*
 int	main(void)
 {
 	t_list	*arr;
@@ -35,21 +42,19 @@ int	main(void)
 	}
 	arr[19].next = NULL;
 
-	/* Тест 1: 20 элементов, последний должен иметь value == 19 */
 	res = ft_lstlast(arr);
 	if (res == &arr[19] && res->value == 19)
 		printf("Test 1 OK: last value = %d\n", res->value);
 	else
 		printf("Test 1 FAIL\n");
 
-	/* Тест 2: один элемент */
 	res = ft_lstlast(&arr[19]);
 	if (res == &arr[19])
 		printf("Test 2 OK: single element\n");
 	else
 		printf("Test 2 FAIL\n");
 
-	/* Тест 3: NULL */
+	// NULL
 	res = ft_lstlast(NULL);
 	if (res == NULL)
 		printf("Test 3 OK: NULL -> NULL\n");
@@ -59,3 +64,4 @@ int	main(void)
 	free(arr);
 	return (0);
 }
+*/

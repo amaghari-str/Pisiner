@@ -1,11 +1,23 @@
-#include "ft_strdup.c"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/20 19:41:48 by amaghari          #+#    #+#             */
+/*   Updated: 2026/10/20 19:43:08 by amaghari         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static char tlower(unsigned int i, char s)
+#include "libft.h"
+
+static char	tlower(unsigned int i, char s)
 {
 	(void) i;
 	if (s <= 90 && s >= 65)
-		return s + 32;
-	return s;
+		return (s + 32);
+	return (s);
 }
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
@@ -28,7 +40,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	return (str);
 }
-
+/*
 #include <stdio.h>
 
 int main ()
@@ -39,3 +51,4 @@ int main ()
 	free(p);
 	return 0;
 }
+*/

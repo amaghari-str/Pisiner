@@ -6,12 +6,11 @@
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/16 14:23:28 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/19 17:09:02 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/20 19:31:15 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <stddef.h>
-#include "ft_strlen.c"
+
+#include "libft.h"
 
 char	*ft_strcpy(char *dest, const char *src)
 {

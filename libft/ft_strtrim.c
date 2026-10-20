@@ -1,36 +1,50 @@
-#include "ft_strdup.c"
-#include "ft_strchr.c"
-char *ft_strtrim(char const *s1, char const *set)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/20 19:49:12 by amaghari          #+#    #+#             */
+/*   Updated: 2026/10/20 19:59:01 by amaghari         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+char	*ft_strtrim(char const *s1, char const *set)
 {
-    int i;
-    char *p;
-    char *buff;
+	int	i;
+	char			*p;
+	char	*buff;
 
-    i = 0;
-    if (!s1 || !set)
-        return ft_strdup(s1);
-    p = ft_strdup(s1);
-    i = (int)ft_strlen(s1);
-    while (ft_strchr(set, s1[i]))
-    {
-        p[i] = '\0';
-        i--;
-    }
-    i = 0;
-    while(ft_strchr(set, s1[i]))
-        i++;
-    return (buff = ft_strdup(&p[i]));
+	i = 0;
+	if (!s1 || !set)
+		return (ft_strdup(s1));
+	p = ft_strdup(s1);
+	i = (int)ft_strlen(s1);
+	while (ft_strchr(set, s1[i]))
+	{
+		p[i] = '\0';
+		i--;
+	}
+	i = 0;
+	while (ft_strchr(set, s1[i]))
+		i++;
+	return (buff = ft_strdup(&p[i]));
 }
-
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-void run_test(int test_num, const char *s1, const char *set, const char *expected) {
+void run_test(int test_num, const char *s1,
+	const char *set, const char *expected) {
     char *result = ft_strtrim(s1, set);
 
     printf("Test %d: ", test_num);
-    if ((result == NULL && expected == NULL) || (result && expected && strcmp(result, expected) == 0)) {
+    if ((result == NULL && expected == NULL) || 
+(result && expected && strcmp(result, expected) == 0)) {
         printf("✅ PASSED\n");
     } else {
         printf("❌ FAILED\n");
@@ -40,7 +54,8 @@ void run_test(int test_num, const char *s1, const char *set, const char *expecte
     printf("  Got      = \"%s\"\n", result ? result : "NULL");
     printf("  Expected = \"%s\"\n\n", expected ? expected : "NULL");
 
-    // Free the allocated memory if the function successfully returned a new string
+    // Free the allocated memory if the 
+    //function successfully returned a new string
     if (result) {
         free(result);
     }
@@ -72,3 +87,4 @@ int main(void) {
 
     return 0;
 }
+*/
