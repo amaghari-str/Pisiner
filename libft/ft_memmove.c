@@ -6,11 +6,23 @@
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 16:05:20 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/20 20:16:44 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/21 15:17:06 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	move(unsigned char *p, unsigned char *s, size_t value)
+{
+	size_t	i;
+
+	i = value;
+	while (i > 0)
+	{
+		i--;
+		p[i] = s[i];
+	}
+}
 
 void	*ft_memmove(void *dest, const void *src, size_t value)
 {
@@ -31,15 +43,7 @@ void	*ft_memmove(void *dest, const void *src, size_t value)
 			i++;
 		}
 	}
-	else
-	{
-		i = value;
-		while (i > 0)
-		{
-			i--;
-			p[i] = s[i];
-		}
-	}
+	move(p, s, value);
 	return (dest);
 }
 /*

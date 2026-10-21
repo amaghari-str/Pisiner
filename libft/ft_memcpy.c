@@ -6,7 +6,7 @@
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 18:05:15 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/20 19:11:08 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/21 14:46:48 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char	*p;
 	unsigned char	*v;
-	size_t				i;
+	size_t			i;
 
 	i = 0;
 	p = (unsigned char *)dest;

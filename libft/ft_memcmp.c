@@ -6,7 +6,7 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 19:07:42 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/20 19:09:57 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/21 14:46:07 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_memcmp(const void *cont, const void *data, size_t n)
 {
 	const unsigned char	*s1;
 	const unsigned char	*s2;
-	size_t					i;
+	size_t				i;
 
 	if (n == 0)
 		return (0);

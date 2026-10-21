@@ -6,7 +6,7 @@
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/13 17:25:35 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/20 19:43:51 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/21 14:44:09 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t  i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)

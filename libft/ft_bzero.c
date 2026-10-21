@@ -6,7 +6,7 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 18:23:27 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/20 20:07:21 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/21 14:43:08 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_bzero(void *dest, size_t n)
 {
 	unsigned char	*p;
-	size_t				i;
+	size_t			i;
 
 	i = 0;
 	p = (unsigned char *)dest;

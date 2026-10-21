@@ -6,7 +6,7 @@
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 18:38:48 by amaghari          #+#    #+#             */
-/*   Updated: 2026/08/15 14:21:17 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/21 14:45:21 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
-	size_t      	src_len;
+	size_t	src_len;
 
 	i = 0;
 	src_len = 0;
