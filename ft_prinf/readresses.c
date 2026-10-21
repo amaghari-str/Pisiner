@@ -6,9 +6,11 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 19:09:50 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/21 20:08:07 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/21 20:24:44 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "printf.h"
 
 static int	ft_putchar_arg(va_list arg)
 {
@@ -51,5 +53,10 @@ static int	tipe_detector(char type, va_list arg)
 		return ft_put_pos_arg(arg);
 	if (type == "p")
 		return ft_spesific_arg(arg);
+	if (type == '&')
+	{
+		ft_putchar('%');
+		return (1);
+	}
 	return 0;
 }
