@@ -3,78 +3,88 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mcombeau <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/22 13:48:30 by mcombeau          #+#    #+#              #
-#    Updated: 2021/12/02 13:26:19 by mcombeau         ###   ########.fr        #
+#    Created: 2026/10/21 14:35:34 by amaghari          #+#    #+#              #
+#    Updated: 2026/10/21 14:35:36 by amaghari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+
 NAME = libft.a
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra -g3
-AR = ar rcs
-SRC = ft_isalpha \
-	ft_isdigit \
-	ft_isalnum \
-	ft_isascii \
-	ft_isprint \
-	ft_strlen \
-	ft_memset \
-	ft_bzero \
-	ft_memcpy \
-	ft_memmove \
-	ft_strlcpy \
-	ft_strlcat \
-	ft_toupper \
-	ft_tolower \
-	ft_strchr \
-	ft_strrchr \
-	ft_strncmp \
-	ft_memchr \
-	ft_memcmp \
-	ft_strnstr \
-	ft_atoi \
-	ft_calloc \
-	ft_strdup \
-	ft_substr \
-	ft_strtrim \
-	ft_split \
-	ft_itoa \
-	ft_strmapi \
-	ft_striteri \
-	ft_putchar_fd \
-	ft_putstr_fd \
-	ft_putendl_fd \
-	ft_putnbr_fd
-BONUS_SRC = ft_lstnew \
-	ft_lstadd_front \
-	ft_lstsize \
-	ft_lstlast \
-	ft_lstadd_back
 
-SRCS = $(addsuffix .c, $(SRC))
-OBJS = $(addsuffix .o, $(SRC))
-BONUS_SRCS = $(addsuffix .c, $(BONUS_SRC))
-BONUS_OBJS = $(addsuffix .o, $(BONUS_SRC))
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 
-.c.o: $(SRCS) $(BONUS_SRCS)
-	$(CC) $(CFLAGS) -c -o $@ $<
+AR = ar
+ARFLAGS = rcs
 
-$(NAME): $(OBJS)
-	$(AR) $@ $^
+SRC = ft_isalpha.c \
+	ft_isdigit.c \
+	ft_isalnum.c \
+	ft_isascii.c \
+	ft_isprint.c \
+	ft_strlen.c \
+	ft_memset.c \
+	ft_bzero.c \
+	ft_memcpy.c \
+	ft_memmove.c \
+	ft_strlcpy.c \
+	ft_strlcat.c \
+	ft_toupper.c \
+	ft_tolower.c \
+	ft_strchr.c \
+	ft_strrchr.c \
+	ft_strncmp.c \
+	ft_memchr.c \
+	ft_memcmp.c \
+	ft_strnstr.c \
+	ft_atoi.c \
+	ft_calloc.c \
+	ft_strdup.c \
+	ft_substr.c \
+	ft_strjoin.c \
+	ft_strtrim.c \
+	ft_split.c \
+	ft_itoa.c \
+	ft_strmapi.c \
+	ft_striteri.c \
+	ft_putchar_fd.c \
+	ft_putstr_fd.c \
+	ft_putendl_fd.c \
+	ft_putnbr_fd.c
 
-bonus: $(OBJS) $(BONUS_OBJS)
-	$(AR) $(NAME) $^
+BONUS_SRC = ft_lstnew.c \
+	ft_lstadd_front.c \
+	ft_lstsize.c \
+	ft_lstlast.c \
+	ft_lstadd_back.c \
+	ft_lstdelone.c \
+	ft_lstclear.c \
+	ft_lstiter.c \
+	ft_lstmap.c
+
+OBJ = $(SRC:.c=.o)
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 all: $(NAME)
 
+$(NAME): $(OBJ)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
+
+bonus: $(OBJ) $(BONUS_OBJ)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJ) $(BONUS_OBJ)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
-	rm -f *.o
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
-re: clean all
+re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all bonus clean fclean re
+
