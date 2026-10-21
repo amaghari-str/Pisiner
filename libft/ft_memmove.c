@@ -6,13 +6,13 @@
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 16:05:20 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/21 15:17:06 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/21 16:42:01 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	move(unsigned char *p, unsigned char *s, size_t value)
+static void	move(unsigned char *p, const unsigned char *s, size_t value)
 {
 	size_t	i;
 
