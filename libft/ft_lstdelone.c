@@ -6,7 +6,7 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 14:50:54 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/21 14:53:36 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/23 18:03:06 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 		return ;
 	if (del)
 	{
-		del(lst -> content)
+		del(lst -> content);
 		free(lst);
 	}
 }

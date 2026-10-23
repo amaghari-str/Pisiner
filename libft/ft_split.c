@@ -6,7 +6,7 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 13:22:45 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/20 19:39:41 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/23 18:23:36 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static size_t	ft_count_words(const char *s, char c)
 
 	i = 0;
 	words = 0;
+	if(!s || !c)
+		return (1);
 	while (s[i])
 	{
 		while (s[i] == c)
@@ -61,10 +63,10 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	size_t	j;
 
-	if (!s || !c)
-		return (NULL);
 	words = ft_count_words(s, c);
 	p = (char **)malloc(sizeof(char *) * words + 1);
+	if (!p || !s || !c)
+		return (NULL);
 	i = 0;
 	j = 0;
 	while (j < words)
