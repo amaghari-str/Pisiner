@@ -1,5 +1,5 @@
 <div align="center">
-<i>This project has been created as partof the 42 curriculum by</i>
+<i>This project has been created as partof the 42 curriculum by amaghari</i>
 </div>
 
 ![libfoto](src/Gemini_Generated_Image_ivg1izivg1izivg1.jpeg)
