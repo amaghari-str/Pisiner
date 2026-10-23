@@ -112,16 +112,6 @@ The library includes functions for creating, manipulating, and deleting singly l
 
 ## 📁 Project Structure
 
-```text
-libft/
-├── src/
-│   └── Gemini_Generated_Image_ivg1izivg1izivg1.jpeg
-├── ft_*.c
-├── libft.h
-├── Makefile
-└── README.md
-```
-
 - `ft_*.c` — source files containing the library functions, including linked-list operations.
 - `libft.h` — function prototypes, required includes, and linked-list structure declarations.
 - `Makefile` — compilation rules for building the static library.
