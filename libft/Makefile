@@ -6,7 +6,7 @@
 #    By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/21 14:35:34 by amaghari          #+#    #+#              #
-#    Updated: 2026/10/21 14:35:36 by amaghari         ###   ########.fr        #
+#    Updated: 2026/10/23 14:53:41 by amaghari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,9 +52,8 @@ SRC = ft_isalpha.c \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
-	ft_putnbr_fd.c
-
-BONUS_SRC = ft_lstnew.c \
+	ft_putnbr_fd.c \
+	ft_lstnew.c \
 	ft_lstadd_front.c \
 	ft_lstsize.c \
 	ft_lstlast.c \
@@ -64,27 +63,21 @@ BONUS_SRC = ft_lstnew.c \
 	ft_lstiter.c \
 	ft_lstmap.c
 
-OBJ = $(SRC:.c=.o)
-BONUS_OBJ = $(BONUS_SRC:.c=.o)
-
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 
-bonus: $(OBJ) $(BONUS_OBJ)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJ) $(BONUS_OBJ)
-
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) $(BONUS_OBJ)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re
 
