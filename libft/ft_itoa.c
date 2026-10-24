@@ -6,10 +6,9 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 14:57:42 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/20 18:48:09 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/24 15:53:36 by emosman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 static long long	find_dev(int n)
@@ -46,6 +45,22 @@ static short	is_zero(int n, char *p)
 	}
 	return (0);
 }
+static int	stringlen(int n)
+{
+	int	size;
+
+	if (n == -2147483648)
+		n++;
+	if (n < 0)
+		n *= -1;
+	size = 0;
+	while (n > 10)
+	{
+		n /= 10;
+		size++;
+	}
+	return (size + 1);
+}
 
 char	*ft_itoa(int n)
 {
@@ -54,7 +69,7 @@ char	*ft_itoa(int n)
 	short		i;
 
 	i = 0;
-	p = ft_calloc(2, 20);
+	p = malloc (stringlen(n) + 1);
 	if (int_max(n, p) || is_zero(n, p))
 		return (p);
 	if (n < 0)

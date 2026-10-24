@@ -6,27 +6,28 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 18:28:42 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/23 19:14:01 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/20 18:35:04 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 void	*ft_calloc(size_t n, size_t l)
 {
-	unsigned char	*p;
+    return calloc(n, l);
+	/*unsigned char	*p;
 	size_t			res;
 
 	res = n * l;
 	p = malloc(res);
-	if (!p)
-		return (NULL);
 	while (res > 0)
 	{
 		res--;
 		p[res] = (unsigned char) '\0';
 	}
 	return ((void *)p);
+	*/
 }
 /*
 #include <stdio.h>

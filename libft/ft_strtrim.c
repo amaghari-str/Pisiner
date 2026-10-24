@@ -6,33 +6,37 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 19:49:12 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/20 20:14:54 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/24 15:18:14 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strtrim(char const *s1, char const *set)
+char    *ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	char	*p;
-	char	*buff;
+	int     i;
+	int     start;
+	char    *p;
+	char    *buff;
 
-	i = 0;
 	if (!s1 || !set)
-		return (ft_strdup(s1));
+		return (NULL);
 	p = ft_strdup(s1);
-	i = (int)ft_strlen(s1);
-	while (ft_strchr(set, s1[i]))
+	if (!p)
+		return (NULL);
+	i = (int)ft_strlen(s1) - 1;
+	while (i >= 0 && ft_strchr(set, s1[i]))
 	{
 		p[i] = '\0';
 		i--;
 	}
-	i = 0;
-	while (ft_strchr(set, s1[i]))
-		i++;
-	return (buff = ft_strdup(&p[i]));
+	start = 0;
+	while (p[start] && ft_strchr(set, p[start]))
+		start++;
+	buff = ft_strdup(&p[start]);
+	free(p);
+	return (buff);
 }
+
 /*
 #include <stdio.h>
 #include <stdlib.h>

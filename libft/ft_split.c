@@ -6,7 +6,7 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 13:22:45 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/23 18:23:36 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/24 16:22:23 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,18 @@ static size_t	ft_count_words(const char *s, char c)
 
 	i = 0;
 	words = 0;
-	if(!s || !c)
-		return (1);
+	if (!s)
+		return (0);
 	while (s[i])
 	{
-		while (s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
 		if (s[i])
+		{
 			words++;
-		while (s[i] && s[i] != c)
-			i++;
+			while (s[i] && s[i] != c)
+				i++;
+		}
 	}
 	return (words);
 }
@@ -49,31 +51,42 @@ static char	*spliting(const char *s, char c)
 	char	*temp;
 
 	len = len_word(s, c);
-	temp = malloc(sizeof(char) * len + 1);
+	temp = malloc(sizeof(char) * (len + 1));
 	if (!temp)
 		return (NULL);
 	ft_strlcpy(temp, s, len + 1);
 	return (temp);
 }
 
+static void	free_split(char **p, size_t j)
+{
+	while (j > 0)
+		free(p[--j]);
+	free(p);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	words;
 	char	**p;
-	int		i;
+	size_t	i;
 	size_t	j;
 
+	if (!s)
+		return (NULL);
 	words = ft_count_words(s, c);
-	p = (char **)malloc(sizeof(char *) * words + 1);
-	if (!p || !s || !c)
+	p = malloc(sizeof(char *) * (words + 1));
+	if (!p)
 		return (NULL);
 	i = 0;
 	j = 0;
 	while (j < words)
 	{
-		while (s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
 		p[j] = spliting(s + i, c);
+		if (!p[j])
+			return (free_split(p, j), NULL);
 		i += len_word(s + i, c);
 		j++;
 	}
