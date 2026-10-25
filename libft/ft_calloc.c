@@ -11,14 +11,14 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	*ft_calloc(size_t n, size_t l)
 {
-    return calloc(n, l);
-	/*unsigned char	*p;
+	unsigned char	*p;
 	size_t			res;
 
+	if (n != 0 && l > 4294967295 / n)
+	    return (NULL);
 	res = n * l;
 	p = malloc(res);
 	while (res > 0)
@@ -27,7 +27,6 @@ void	*ft_calloc(size_t n, size_t l)
 		p[res] = (unsigned char) '\0';
 	}
 	return ((void *)p);
-	*/
 }
 /*
 #include <stdio.h>
