@@ -6,19 +6,19 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 18:53:17 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/20 18:56:45 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/25 15:29:47 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list  *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-        if (!lst)
-                return (NULL);
-        while (lst != NULL && lst->next != NULL)
-                lst = lst->next;
-        return (lst);
+	if (!lst)
+		return (NULL);
+	while (lst != NULL && lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
 
 /*

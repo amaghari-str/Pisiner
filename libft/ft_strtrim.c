@@ -6,17 +6,18 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 19:49:12 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/24 15:18:14 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/26 15:22:46 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char    *ft_strtrim(char const *s1, char const *set)
+
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int     i;
-	int     start;
-	char    *p;
-	char    *buff;
+	int		i;
+	int		start;
+	char	*p;
+	char	*buff;
 
 	if (!s1 || !set)
 		return (NULL);

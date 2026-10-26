@@ -6,7 +6,7 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 18:28:42 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/20 18:35:04 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/25 15:30:26 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t n, size_t l)
 	size_t			res;
 
 	if (n != 0 && l > 4294967295 / n)
-	    return (NULL);
+		return (NULL);
 	res = n * l;
 	p = malloc(res);
 	while (res > 0)

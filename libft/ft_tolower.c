@@ -6,7 +6,7 @@
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 20:02:21 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/20 20:02:30 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/26 15:12:08 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,10 @@ int	ft_tolower(int c)
 		c += 32;
 	return (c);
 }
+
+/*#include <stdio.h>
+int main(){
+	char l = 'Q';
+	printf("%c", ft_tolower(l));
+}
+*/

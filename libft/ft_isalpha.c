@@ -6,7 +6,7 @@
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 17:44:40 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/14 17:45:18 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/26 14:12:09 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,3 +17,16 @@ int	ft_isalpha(int c)
 	else
 		return (0);
 }
+/*
+#include<unistd.h>
+int main () {
+    int res = ft_isalpha('q');
+    if (res == 1)
+    {
+        write(1, "1\n", 2);
+    } else {
+        write(1, "0\n", 2);
+    }
+    return 0;
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 17:46:42 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/20 18:39:51 by amaghari         ###   ########.fr       */
+/*   Updated: 2026/10/26 15:14:27 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,3 +16,16 @@ int	ft_isprint(int c)
 {
 	return (c >= 32 && c <= 126);
 }
+/*
+#include<unistd.h>
+int main () {
+    int res = ft_isprint('\t');
+    if (res == 1)
+    {
+        write(1, "1\n", 2);
+    } else {
+        write(1, "0\n", 2);
+    }
+    return 0;
+}
+*/
