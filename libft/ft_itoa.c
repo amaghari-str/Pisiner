@@ -5,81 +5,58 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/19 14:57:42 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/26 12:01:13 by amaghari         ###   ########.fr       */
+/*   Created: 2026/10/28 14:08:00 by amaghari          #+#    #+#             */
+/*   Updated: 2026/10/28 14:08:21 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static long	find_dev(int n)
+static int	size(int n)
 {
-	long		dev;
-	long		temp;
+	int	size;
 
-	temp = n;
-	dev = 1;
-	while (temp >= 10)
-	{
-		dev *= 10;
-		temp /= 10;
-	}
-	return (dev);
-}
-
-static short	int_max(int n, char *p)
-{
+	size = 0;
 	if (n == -2147483648)
+		n++;
+	if (n < 0)
 	{
-		ft_strlcpy(p, "-2147483648", 12);
-		return (1);
+		n *= -1;
+		size ++;
 	}
-	return (0);
-}
-
-static short	is_zero(int n, char *p)
-{
-	if (n == 0)
+	while (n >= 10)
 	{
-		*p = '0';
-		return (1);
+		n /= 10;
+		size++;
 	}
-	return (0);
+	return (size + 1);
 }
 
 char	*ft_itoa(int n)
 {
-	long		dev;
-	char		*p;
-	short		i;
+	unsigned int	num;
+	char			*res;
+	int				i;
 
-	i = 0;
-	p = ft_calloc(2, 20);
-	if (int_max(n, p) || is_zero(n, p))
-		return (p);
-	if (n < 0)
+	i = size(n);
+	res = malloc (i + 1);
+	if (n == 0)
 	{
-		p[i++] = '-';
-		n = -n;
+		res[0] = '0';
+		num = 0;
 	}
-	dev = find_dev(n);
-	while (dev > 0)
+	else if (n < 0)
 	{
-		p[i++] = (n / dev) + '0';
-		n %= dev;
-		dev /= 10;
+		res[0] = '-';
+		num = -(unsigned int)n;
 	}
-	return (p);
+	else
+		num = n;
+	res[i--] = '\0';
+	while (num > 0)
+	{
+		res[i--] = '0' + (num % 10);
+		num /= 10;
+	}
+	return (res);
 }
-/*
-#include <stdio.h>
-
-int main (void){
-	char *arr = ft_itoa(-42);
-	char *arr2 = ft_itoa(100004);
-	printf("%s\n", arr);
-	printf("%s\n", arr2);
-	printf("%s\n", ft_itoa(-2147483647));
-	return 0;
-}
-*/
