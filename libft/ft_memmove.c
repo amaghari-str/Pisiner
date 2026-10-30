@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/14 16:05:20 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/21 16:42:01 by amaghari         ###   ########.fr       */
+/*   Created: 2026/10/30 15:15:56 by amaghari          #+#    #+#             */
+/*   Updated: 2026/10/30 15:42:25 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ void	*ft_memmove(void *dest, const void *src, size_t value)
 			i++;
 		}
 	}
-	move(p, s, value);
+	else
+		move(p, s, value);
 	return (dest);
 }
 /*

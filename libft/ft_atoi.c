@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amaghari <amaghari@student.42belgium.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/15 18:16:33 by amaghari          #+#    #+#             */
-/*   Updated: 2026/10/15 13:54:05 by amaghari         ###   ########.fr       */
+/*   Created: 2026/10/30 15:06:39 by amaghari          #+#    #+#             */
+/*   Updated: 2026/10/30 15:25:32 by amaghari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+#include "libft.h"
+
+int	ft_atoi(const char *str)
 {
 	int	sign;
 	int	result;
